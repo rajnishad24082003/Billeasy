@@ -18,8 +18,8 @@ A simple RESTful API for managing books and user reviews, built with **Node.js**
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/book-api.git
-   cd book-api
+   git clone https://github.com/rajnishad24082003/Billeasy.git
+   cd Billeasy
    ```
 
 2. **Create `.env` file**  
@@ -50,14 +50,25 @@ A simple RESTful API for managing books and user reviews, built with **Node.js**
 
 ### 🔓 Public Routes
 
-| Method | Endpoint  | Description             |
-| ------ | --------- | ----------------------- |
-| GET    | `/`       | Home page               |
-| GET    | `/books`  | Get all books           |
-| POST   | `/signup` | Register new user       |
-| POST   | `/login`  | Login and get JWT token |
+| Method | Endpoint        | Description             |
+| ------ | --------------- | ----------------------- |
+| GET    | `/`             | Home page               |
+| GET    | `/books?page=2` | Get all books           |
+| POST   | `/signup`       | Register new user       |
+| POST   | `/login`        | Login and get JWT token |
 
-#### 🔐 Login Response
+#### Example signup/login
+
+```json
+{
+  "username": "xyz",
+  "password": "xxxxxxxxxxxxxxxxxxxxxxxx"
+}
+```
+
+####
+
+🔐 Login Response
 
 Returns:
 
@@ -78,6 +89,7 @@ Use this token for protected routes.
 | POST   | `/books`             | Add a new book                         |
 | GET    | `/books/:id`         | Get book by ID                         |
 | POST   | `/books/:id/reviews` | Add or update your review for the book |
+| PUT    | `/books/:id/reviews` | Add or update your review for the book |
 | DELETE | `/books/:id/reviews` | Delete your review from the book       |
 
 #### Example Book Payload
