@@ -26,17 +26,31 @@ const postBook = async (req, res) => {
   }
 };
 
-//http://localhost:3000/books?page=2
+//http://localhost:3000/books?page=2&author=raj&genre=JavaScript
 const getAllBooks = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1; // default: page 1
     const limit = 5; // default: 5 items/page
+    const author = req.query.author;
+    const genre = req.query.genre;
 
     const skip = (page - 1) * limit;
 
-    const items = await Book.find().skip(skip).limit(limit);
-
-    const total = await Book.countDocuments();
+    let items = {};
+    let total = 0;
+    if (author && genre) {
+      items = await Book.find({ author, genre }).skip(skip).limit(limit);
+      total = await Book.find({ author, genre }).countDocuments();
+    } else if (author) {
+      items = await Book.find({ author }).skip(skip).limit(limit);
+      total = await Book.find({ author }).countDocuments();
+    } else if (genre) {
+      items = await Book.find({ genre }).skip(skip).limit(limit);
+      total = await Book.find({ genre }).countDocuments();
+    } else {
+      items = await Book.find().skip(skip).limit(limit);
+      total = await Book.find().countDocuments();
+    }
 
     res.status(200).json({
       page,

@@ -27,10 +27,12 @@ A simple RESTful API for managing books and user reviews, built with **Node.js**
 
    ```env
    PORT=3000
-   MONGODB_URI=your_mongodb_connection_string
+   MONGODB_URI=mongodb+srv://test:test@cluster0.s66s0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
    SALT=10
    JWT_SECRET=rf3j489tu34jhduisj32
    ```
+
+   I have kept the mongoDB URI for testing and it will be deleted after a month
 
 3. **Install dependencies**
 
@@ -50,12 +52,12 @@ A simple RESTful API for managing books and user reviews, built with **Node.js**
 
 ### 🔓 Public Routes
 
-| Method | Endpoint        | Description             |
-| ------ | --------------- | ----------------------- |
-| GET    | `/`             | Home page               |
-| GET    | `/books?page=2` | Get all books           |
-| POST   | `/signup`       | Register new user       |
-| POST   | `/login`        | Login and get JWT token |
+| Method | Endpoint  | Description                                             |
+| ------ | --------- | ------------------------------------------------------- |
+| GET    | `/`       | Home page                                               |
+| GET    | `/books`  | Get all books /books?page=2&author=raj&genre=JavaScript |
+| POST   | `/signup` | Register new user                                       |
+| POST   | `/login`  | Login and get JWT token                                 |
 
 #### Example signup/login
 
