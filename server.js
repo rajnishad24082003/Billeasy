@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 server.use(bodyParser.json());
 server.use(route);
 
+//i have given the URI but after one mouth i will delete the database.
 server.listen(process.env.PORT, () => {
   console.log(`server is running on port ${process.env.PORT}`);
   try {

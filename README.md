@@ -1,6 +1,6 @@
 # 📚 Book API
 
-A simple RESTful API for managing books and user reviews, built with **Node.js**, **Express**, **MongoDB**, and **JWT** for authentication.
+A simple RESTful API for managing books and user reviews, built with **Node.js**, **Express**, **MongoDB**, **Bcryptjs**, and **JWT** for authentication.
 
 ---
 
@@ -111,7 +111,9 @@ Use this token for protected routes.
 }
 ```
 
----
+## For more Details on Schema ,You can look in models folder
+
+## you can use {username:raj, password:123456789} for testing
 
 ## 📄 License
 

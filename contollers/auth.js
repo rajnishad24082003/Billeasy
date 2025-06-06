@@ -13,7 +13,7 @@ const signup = async (req, res) => {
       throw new Error("user already exist");
     }
     const hashedpass = await bcryptjs.hash(password, Number(process.env.SALT));
-    const item = new user({
+    const item = new User({
       username,
       password: hashedpass,
     });
